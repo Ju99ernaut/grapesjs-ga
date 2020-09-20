@@ -2,6 +2,8 @@
 
 Easily link to your google analytics or google tag manager
 
+[DEMO](https://codepen.io/ju99ernaut/pen/BaKGadb)
+
 ### HTML
 ```html
 <link href="https://unpkg.com/grapesjs/dist/css/grapes.min.css" rel="stylesheet">
