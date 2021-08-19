@@ -1,9 +1,6 @@
 // Based on grapesjs-plugin-gtm, https://github.com/pedegago/grapesjs-plugin-gtm
 
-import {
-  gtmCompId,
-  gaCompId
-} from './consts';
+import { gtmCompId, gaCompId } from './consts';
 
 export default (editor, opts = {}) => {
   const domc = editor.DomComponents;
@@ -20,7 +17,7 @@ export default (editor, opts = {}) => {
       defaults: {
         tagName: "div",
         name: "GTM",
-        draggable: "#wrapper",
+        draggable: "[data-gjs-type=wrapper]",
         droppable: false,
         stylable: false,
         copyable: false,
@@ -41,7 +38,6 @@ export default (editor, opts = {}) => {
       },
       init() {
         this.on("change:gtmId", () => this.trigger('change:script'));
-
         tm.set('active', 1);
       },
       toHTML() {
@@ -56,7 +52,7 @@ export default (editor, opts = {}) => {
       defaults: {
         tagName: "div",
         name: "GA",
-        draggable: "#wrapper",
+        draggable: "[data-gjs-type=wrapper]",
         droppable: false,
         stylable: false,
         copyable: false,
@@ -78,7 +74,6 @@ export default (editor, opts = {}) => {
       },
       init() {
         this.on("change:trId", () => this.trigger('change:script'));
-
         tm.set('active', 1);
       },
       toHTML() {
